@@ -1,116 +1,593 @@
-NINA DIGITAL · @NINADIGGITAL
-Kit Personal Branding
-Tous tes éléments de marque réunis en un seul endroit
-✦
-IDENTITÉ DE MARQUE
-NOM DE LA MARQUE
-SLOGAN / TAGLINE
-NICHE PRINCIPALE
-MISSION (EN 1 PHRASE)
-VALEURS DE MARQUE
-🎨
-PALETTE DE COULEURS
-Aa
-TYPOGRAPHIE
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit Personal Branding</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #e8af07; --gold-light: #f4c70f;
+    --black: #111111; --white: #fafaf8;
+    --cream: #f9f5ee; --gray: #888; --border: #e0d9cc;
+  }
+  body { background: var(--cream); font-family: 'Montserrat', sans-serif; color: var(--black); min-height: 100vh; padding: 40px 20px 80px; }
 
-＋ Ajouter une police
-💬
-TON & VOIX DE MARQUE
-ADJECTIFS DE VOIX
-Chaleureux
-Direct
-Motivant
-Authentique
-Pédagogue
-Expert
-Humain
-Bienveillant
-Inspirant
-Fun
-Professionnel
-Audacieux
+  .header { text-align: center; margin-bottom: 50px; }
+  .header::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold); margin: 18px auto 0; }
+  .header .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 6vw, 64px); font-weight: 600; line-height: 1.1; }
+  .header h1 em { font-style: italic; color: var(--gold); }
+  .header p { margin-top: 14px; font-size: 13px; color: var(--gray); }
 
-＋ Ajouter
-Double-clic sur un tag personnalisé pour le supprimer
+  .grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  .full { grid-column: 1 / -1; }
 
-STYLE DE COMMUNICATION
-— Choisir —Tutoiement (tu)Vouvoiement (vous)Les deux selon le contexte
-EMOJIS UTILISÉS RÉGULIÈREMENT
-MOTS / EXPRESSIONS SIGNATURE
-MOTS À ÉVITER
-PHRASE TYPE D'INTRO CAPTION
-CTA SIGNATURE
-👤
-AVATAR CLIENT IDÉAL
-PRÉNOM FICTIF DE L'AVATAR
-ÂGE
-SITUATION
-PROBLÈME PRINCIPAL
-DÉSIR PROFOND
-POINT DE DOULEUR CLÉ
-TRANSFORMATION PROMISE
-OBJECTIONS FRÉQUENTES
-💎
-OFFRES & POSITIONNEMENT
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); border-radius: 4px 0 0 4px; }
+  .card-title { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .card-icon { width: 34px; height: 34px; background: var(--gold-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .card-title h2 { font-size: 13px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
 
-＋ Ajouter une offre
+  label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 5px; margin-top: 14px; }
+  label:first-of-type { margin-top: 0; }
 
-POSITIONNEMENT UNIQUE (CE QUI TE DIFFÉRENCIE)
-📌
-PILIERS DE CONTENU
-＋ Ajouter un pilier
-📸
-STYLE VISUEL & ESTHÉTIQUE
-AMBIANCE GÉNÉRALE
-Épuré
-Luxe
-Chaud
-Neutre
-Éditorial
-Dynamique
-Minimaliste
-Coloré
+  input[type="text"], textarea, select {
+    width: 100%; background: var(--cream); border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 10px 13px;
+    font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--black);
+    outline: none; transition: border-color .2s; resize: none;
+  }
+  input[type="text"]:focus, textarea:focus, select:focus { border-color: var(--gold); background: #fffef8; }
+  textarea { min-height: 70px; line-height: 1.6; }
 
-＋ Ajouter
-Double-clic sur un tag personnalisé pour le supprimer
-FORMATS UTILISÉS SUR INSTAGRAM
-Reel
-Carrousel
-Post unique
-Story
-B-roll
-Voix-off
-Facecam
-RATIO D'UTILISATION DES FORMATS
-🖼️
-MOODBOARD VISUEL
-Clique sur chaque case pour ajouter une image de référence
-INSPIRATIONS / RÉFÉRENCES DE COMPTES
-🌐
-PRÉSENCE EN LIGNE & RÉSEAUX
-IG
+  /* COLORS */
+  .color-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 4px; }
+  .color-item { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; min-width: 90px; }
+  .color-swatch-wrap { position: relative; width: 100%; height: 56px; border-radius: 10px; overflow: hidden; border: 1.5px solid var(--border); cursor: pointer; transition: transform .15s; }
+  .color-swatch-wrap:hover { transform: scale(1.03); }
+  .color-swatch-wrap input[type="color"] { position: absolute; inset: -10px; width: calc(100% + 20px); height: calc(100% + 20px); border: none; cursor: pointer; opacity: 0; z-index: 2; }
+  .swatch-preview { position: absolute; inset: 0; border-radius: 8px; pointer-events: none; }
+  .color-item input[type="text"] { text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 6px 8px; border-radius: 6px; margin-top: 0; }
+  .color-label-text { font-size: 10px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
 
-TK
+  /* FONTS */
+  .font-entry { margin-bottom: 20px; position: relative; }
+  .font-entry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .font-role-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+  .font-block { background: var(--cream); border-radius: 10px; padding: 14px 16px; margin-top: 8px; border: 1.5px solid var(--border); }
+  .font-preview-text { font-size: 22px; line-height: 1.3; margin-bottom: 4px; color: var(--black); transition: font-family .3s; }
+  .font-meta { font-size: 10px; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
 
-YT
+  /* ADD/REMOVE */
+  .btn-add {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    width: 100%; padding: 9px 14px; border-radius: 8px;
+    font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    background: var(--cream); border: 1.5px dashed var(--gold); color: var(--gold);
+    cursor: pointer; transition: all .2s; margin-top: 14px;
+  }
+  .btn-add:hover { background: #fffef0; border-style: solid; }
+  .btn-remove {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: #fff0f0; border: 1.5px solid #ffcccc;
+    color: #cc4444; font-size: 13px; font-weight: 700;
+    cursor: pointer; display: inline-flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all .15s; padding: 0; line-height: 1;
+  }
+  .btn-remove:hover { background: #ffdddd; }
 
-LN
+  /* TONE TAGS */
+  .tone-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .tone-tag {
+    padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    border: 1.5px solid var(--border); cursor: pointer; background: var(--cream); color: var(--black);
+    transition: all .15s; user-select: none;
+  }
+  .tone-tag.active { background: var(--gold); border-color: var(--gold); color: var(--white); }
+  .tone-tag.custom-tag { border-style: dashed; }
+  .tone-tag.custom-tag.active { border-style: solid; }
 
-WEB
+  .tag-add-row { display: flex; gap: 8px; margin-top: 10px; }
+  .tag-add-row input { flex: 1; padding: 7px 12px; font-size: 12px; }
+  .tag-add-row button {
+    padding: 7px 14px; border-radius: 8px; background: var(--gold); border: none;
+    color: var(--black); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700;
+    cursor: pointer; white-space: nowrap; transition: background .2s;
+  }
+  .tag-add-row button:hover { background: var(--gold-light); }
+  .tag-hint { font-size: 10px; color: var(--gray); margin-top: 5px; font-style: italic; }
 
-MC
+  /* PILLARS */
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
+  @media (max-width: 500px) { .pillars-grid { grid-template-columns: 1fr 1fr; } }
+  .pillar-item {
+    background: var(--cream); border: 1.5px solid var(--border); border-radius: 10px;
+    padding: 28px 10px 10px; display: flex; flex-direction: column; gap: 6px; position: relative;
+  }
+  .pillar-item .btn-remove { position: absolute; top: 7px; right: 7px; }
+  .pillar-num { font-size: 10px; font-weight: 800; color: var(--gold); letter-spacing: 1px; }
+  .pillar-item input { font-size: 12px; padding: 6px 8px; }
 
-EMAIL DE CONTACT
-LIEN BIO (LINKTREE ETC.)
-PLATEFORME DE VENTE
+  /* OFFERS */
+  .offer-block {
+    background: var(--cream); border: 1.5px solid var(--border); border-radius: 12px;
+    padding: 32px 16px 16px; margin-bottom: 12px; position: relative;
+  }
+  .offer-block label { margin-top: 10px; }
+  .offer-block label:first-of-type { margin-top: 0; }
+  .offer-block .btn-remove { position: absolute; top: 10px; right: 10px; }
+  .offer-num { font-size: 10px; font-weight: 800; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
 
-BIO INSTAGRAM ACTUELLE
-MOTS-CLÉS SEO INSTAGRAM
-📝
-NOTES & ÉLÉMENTS COMPLÉMENTAIRES
-HISTOIRE DE MARQUE
-PREUVE SOCIALE & CHIFFRES CLÉS
-PARTENARIATS / COLLABORATIONS
-CE QUE LA MARQUE NE FAIT PAS
-RÉINITIALISER
-🖨️ IMPRIMER / EXPORTER PDF
+  /* AVATAR */
+  .avatar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+
+  /* MOODBOARD */
+  .moodboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 8px; }
+  .mood-item {
+    aspect-ratio: 1; border-radius: 10px; border: 2px dashed var(--border);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; background: var(--cream); transition: border-color .2s; overflow: hidden; position: relative;
+  }
+  .mood-item:hover { border-color: var(--gold); }
+  .mood-item span { font-size: 22px; }
+  .mood-item p { font-size: 9px; color: var(--gray); margin-top: 4px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .mood-item input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .mood-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+
+  /* SOCIAL */
+  .social-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .social-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--black); color: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+  .social-row input { margin-top: 0; }
+
+  .divider { height: 1.5px; background: var(--border); margin: 18px 0; }
+
+  .actions { max-width: 1100px; margin: 32px auto 0; display: flex; gap: 12px; justify-content: flex-end; }
+  .btn { padding: 13px 28px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; border: 2px solid var(--black); transition: all .2s; }
+  .btn-primary { background: var(--gold); border-color: var(--gold); color: var(--black); }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-secondary { background: transparent; color: var(--black); }
+  .btn-secondary:hover { background: var(--black); color: var(--white); }
+
+  .save-badge { display: none; position: fixed; bottom: 24px; right: 24px; background: var(--black); color: var(--gold); padding: 12px 20px; border-radius: 10px; font-size: 12px; font-weight: 700; letter-spacing: 1px; z-index: 100; }
+
+  @media print {
+    body { background: white; padding: 10px; }
+    .actions, .save-badge, .btn-add, .btn-remove, .tag-add-row, .tag-hint { display: none !important; }
+    .card { break-inside: avoid; }
+    input, textarea { border: 1px solid #ccc !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="eyebrow">Nina Digital · @ninadiggital</p>
+  <h1>Kit <em>Personal Branding</em></h1>
+  <p>Tous tes éléments de marque réunis en un seul endroit</p>
+</div>
+
+<div class="grid">
+
+  <!-- IDENTITÉ -->
+  <div class="card full">
+    <div class="card-title"><div class="card-icon">✦</div><h2>Identité de Marque</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div><label>Nom de la marque</label><input type="text" placeholder="ex : Nina Digital"></div>
+      <div><label>Slogan / Tagline</label><input type="text" placeholder="ex : Poste avec intention."></div>
+      <div><label>Niche principale</label><input type="text" placeholder="ex : Coaching Instagram"></div>
+    </div>
+    <div style="margin-top:14px;"><label>Mission (en 1 phrase)</label><input type="text" placeholder="ex : Aider les entrepreneurs à faire croître leur compte Instagram avec une stratégie claire."></div>
+    <div style="margin-top:14px;"><label>Valeurs de marque</label><input type="text" placeholder="ex : Authenticité · Stratégie · Résultats · Liberté · Impact"></div>
+  </div>
+
+  <!-- PALETTE -->
+  <div class="card full">
+    <div class="card-title"><div class="card-icon">🎨</div><h2>Palette de Couleurs</h2></div>
+    <div class="color-row" id="colorRow"></div>
+  </div>
+
+  <!-- TYPOGRAPHIE -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">Aa</div><h2>Typographie</h2></div>
+    <div id="fontList"></div>
+    <button class="btn-add" onclick="addFont()">＋ Ajouter une police</button>
+  </div>
+
+  <!-- TON & VOIX -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">💬</div><h2>Ton & Voix de Marque</h2></div>
+    <label>Adjectifs de voix</label>
+    <div class="tone-tags" id="toneTags">
+      <span class="tone-tag" onclick="toggleTag(this)">Chaleureux</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Direct</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Motivant</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Authentique</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Pédagogue</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Expert</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Humain</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Bienveillant</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Inspirant</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Fun</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Professionnel</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Audacieux</span>
+    </div>
+    <div class="tag-add-row">
+      <input type="text" id="newTagInput" placeholder="Ajouter un mot personnalisé..." onkeydown="if(event.key==='Enter')addCustomTag('toneTags','newTagInput')">
+      <button onclick="addCustomTag('toneTags','newTagInput')">＋ Ajouter</button>
+    </div>
+    <p class="tag-hint">Double-clic sur un tag personnalisé pour le supprimer</p>
+    <div class="divider"></div>
+    <label>Style de communication</label>
+    <select><option value="">— Choisir —</option><option>Tutoiement (tu)</option><option>Vouvoiement (vous)</option><option>Les deux selon le contexte</option></select>
+    <label>Emojis utilisés régulièrement</label>
+    <input type="text" placeholder="ex : ✨ 🌟 💛 🎯 🔥 💬">
+    <label>Mots / expressions signature</label>
+    <textarea placeholder="ex : 'Et si je te disais que...', 'La vérité c'est que...'"></textarea>
+    <label>Mots à éviter</label>
+    <textarea placeholder="ex : génial, super, parfait (trop générique)"></textarea>
+    <label>Phrase type d'intro caption</label>
+    <input type="text" placeholder="ex : Tu postes tous les jours et tu n'as toujours aucun résultat ?">
+    <label>CTA signature</label>
+    <input type="text" placeholder="ex : Commente 'INSTA' pour recevoir ma méthode gratuite 👇">
+  </div>
+
+  <!-- AVATAR -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">👤</div><h2>Avatar Client Idéal</h2></div>
+    <label>Prénom fictif de l'avatar</label>
+    <input type="text" placeholder="ex : Sofia / Alex">
+    <div class="avatar-grid">
+      <div><label>Âge</label><input type="text" placeholder="ex : 25 – 35 ans"></div>
+      <div><label>Situation</label><input type="text" placeholder="ex : Freelance, coach"></div>
+      <div><label>Problème principal</label><input type="text" placeholder="ex : Poste sans résultat"></div>
+      <div><label>Désir profond</label><input type="text" placeholder="ex : Vivre de sa passion"></div>
+    </div>
+    <label>Point de douleur clé</label>
+    <textarea placeholder="ex : Elle passe des heures à créer du contenu mais son compte ne décolle pas."></textarea>
+    <label>Transformation promise</label>
+    <textarea placeholder="ex : En 90 jours, elle crée des contenus viraux et attire ses premiers clients en DM."></textarea>
+    <label>Objections fréquentes</label>
+    <textarea placeholder="ex : 'Je n'ai pas le temps', 'Mon niche est trop saturée'"></textarea>
+  </div>
+
+  <!-- OFFRES -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">💎</div><h2>Offres & Positionnement</h2></div>
+    <div id="offerList"></div>
+    <button class="btn-add" onclick="addOffer()">＋ Ajouter une offre</button>
+    <div class="divider"></div>
+    <label>Positionnement unique (ce qui te différencie)</label>
+    <textarea placeholder="ex : Ex-trader reconvertie, +7400 abonnés en 4 mois, méthode testée par mes élèves."></textarea>
+  </div>
+
+  <!-- PILIERS -->
+  <div class="card full">
+    <div class="card-title"><div class="card-icon">📌</div><h2>Piliers de Contenu</h2></div>
+    <div class="pillars-grid" id="pillarGrid"></div>
+    <button class="btn-add" onclick="addPillar()">＋ Ajouter un pilier</button>
+  </div>
+
+  <!-- VISUELS -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">📸</div><h2>Style Visuel & Esthétique</h2></div>
+    <label>Ambiance générale</label>
+    <div class="tone-tags" id="vibeTags">
+      <span class="tone-tag" onclick="toggleTag(this)">Épuré</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Luxe</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Chaud</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Neutre</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Éditorial</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Dynamique</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Minimaliste</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Coloré</span>
+    </div>
+    <div class="tag-add-row">
+      <input type="text" id="newVibeInput" placeholder="Ajouter un mot qui te correspond..." onkeydown="if(event.key==='Enter')addCustomTag('vibeTags','newVibeInput')">
+      <button onclick="addCustomTag('vibeTags','newVibeInput')">＋ Ajouter</button>
+    </div>
+    <p class="tag-hint">Double-clic sur un tag personnalisé pour le supprimer</p>
+    <label style="margin-top:16px;">Formats utilisés sur Instagram</label>
+    <div class="tone-tags" style="margin-top:8px;">
+      <span class="tone-tag" onclick="toggleTag(this)">Reel</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Carrousel</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Post unique</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Story</span>
+      <span class="tone-tag" onclick="toggleTag(this)">B-roll</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Voix-off</span>
+      <span class="tone-tag" onclick="toggleTag(this)">Facecam</span>
+    </div>
+    <label style="margin-top:14px;">Ratio d'utilisation des formats</label>
+    <input type="text" placeholder="ex : 70% Reels · 20% Carrousels · 10% Posts">
+  </div>
+
+  <!-- MOODBOARD -->
+  <div class="card">
+    <div class="card-title"><div class="card-icon">🖼️</div><h2>Moodboard Visuel</h2></div>
+    <p style="font-size:11px;color:var(--gray);margin-bottom:2px;">Clique sur chaque case pour ajouter une image de référence</p>
+    <div class="moodboard-grid" id="moodboard"></div>
+    <label style="margin-top:14px;">Inspirations / références de comptes</label>
+    <input type="text" placeholder="ex : @ninadiggital, @laetitia_c_, @lena.situations">
+  </div>
+
+  <!-- PRÉSENCE EN LIGNE -->
+  <div class="card full">
+    <div class="card-title"><div class="card-icon">🌐</div><h2>Présence en Ligne & Réseaux</h2></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div>
+        <div class="social-row"><div class="social-icon">IG</div><input type="text" placeholder="@ninadiggital"></div>
+        <div class="social-row"><div class="social-icon">TK</div><input type="text" placeholder="@handle TikTok"></div>
+        <div class="social-row"><div class="social-icon">YT</div><input type="text" placeholder="Chaîne YouTube"></div>
+      </div>
+      <div>
+        <div class="social-row"><div class="social-icon">LN</div><input type="text" placeholder="Profil LinkedIn"></div>
+        <div class="social-row"><div class="social-icon">WEB</div><input type="text" placeholder="Site / Landing page"></div>
+        <div class="social-row"><div class="social-icon">MC</div><input type="text" placeholder="ManyChat / Bot DM"></div>
+      </div>
+      <div>
+        <label>Email de contact</label><input type="text" placeholder="hello@ninadigital.fr">
+        <label>Lien bio (Linktree etc.)</label><input type="text" placeholder="linktr.ee/ninadiggital">
+        <label>Plateforme de vente</label><input type="text" placeholder="ex : Systeme.io, Gumroad">
+      </div>
+    </div>
+    <div class="divider"></div>
+    <label>Bio Instagram actuelle</label>
+    <textarea placeholder="ex : 📲 Coach Instagram · J'aide les entrepreneurs à faire croître leur compte&#10;✦ +7400 abonnés en 4 mois&#10;👇 Ta ressource gratuite"></textarea>
+    <label>Mots-clés SEO Instagram</label>
+    <input type="text" placeholder="ex : coach instagram, stratégie instagram, croissance instagram">
+  </div>
+
+  <!-- NOTES -->
+  <div class="card full">
+    <div class="card-title"><div class="card-icon">📝</div><h2>Notes & Éléments Complémentaires</h2></div>
+    <label>Histoire de marque</label>
+    <textarea style="min-height:90px;" placeholder="ex : Ex-trader en commodités environnementales, j'ai quitté la finance pour me lancer dans l'entrepreneuriat digital..."></textarea>
+    <label>Preuve sociale & chiffres clés</label>
+    <input type="text" placeholder="ex : +7400 abonnés en 4 mois · 67K comptes engagés · 896K comptes atteints">
+    <label>Partenariats / collaborations</label>
+    <input type="text" placeholder="ex : Formation pour réseau MLM, Masterclass partenaires...">
+    <label>Ce que la marque ne fait PAS</label>
+    <textarea placeholder="ex : Je ne parle pas de dropshipping, de crypto. Mon positionnement reste ancré dans la stratégie Instagram."></textarea>
+  </div>
+
+</div>
+
+<div class="actions">
+  <button class="btn btn-secondary" onclick="resetAll()">Réinitialiser</button>
+  <button class="btn btn-primary" onclick="window.print()">🖨️ Imprimer / Exporter PDF</button>
+</div>
+<div class="save-badge" id="saveBadge">✦ Sauvegardé !</div>
+
+<script>
+// ── COULEURS ──────────────────────────────────────────
+const colorData = [
+  { label: 'Primaire', default: '#e8af07' },
+  { label: 'Secondaire', default: '#f4c70f' },
+  { label: 'Fond', default: '#f9f5ee' },
+  { label: 'Texte', default: '#111111' },
+  { label: 'Accent', default: '#ffffff' },
+];
+function buildColorRow() {
+  const row = document.getElementById('colorRow');
+  colorData.forEach((c, i) => {
+    const item = document.createElement('div');
+    item.className = 'color-item';
+    item.innerHTML = `
+      <div class="color-swatch-wrap">
+        <div class="swatch-preview" id="swatch${i}" style="background:${c.default}"></div>
+        <input type="color" value="${c.default}" oninput="syncColor(${i},this.value)">
+      </div>
+      <input type="text" id="hex${i}" value="${c.default}" placeholder="#000000" oninput="syncHex(${i},this.value)" maxlength="9">
+      <span class="color-label-text">${c.label}</span>`;
+    row.appendChild(item);
+  });
+}
+function syncColor(i, v) { document.getElementById('swatch'+i).style.background=v; document.getElementById('hex'+i).value=v; autoSave(); }
+function syncHex(i, v) { if(/^#[0-9A-Fa-f]{6}$/.test(v)) document.getElementById('swatch'+i).style.background=v; }
+
+// ── POLICES ───────────────────────────────────────────
+const fontLabels = ['Principale (titres)','Secondaire (corps)','Accent / décorative'];
+const fontPlaceholders = ['ex : Cormorant Garamond','ex : Montserrat','ex : Courier New'];
+const fontStyleDefaults = [
+  { style:'font-style:italic;font-size:26px;', family:"'Cormorant Garamond',serif", meta:'Titre · Italic · Display' },
+  { style:'font-size:15px;font-weight:600;', family:"'Montserrat',sans-serif", meta:'Body · Bold · UI' },
+  { style:'font-size:14px;font-family:monospace;', family:'monospace', meta:'Accent · Mono · Détail' },
+];
+let fontCount = 0;
+
+function addFont(savedName) {
+  const list = document.getElementById('fontList');
+  const id = fontCount++;
+  const isDefault = id < 3;
+  const label = isDefault ? fontLabels[id] : `Police ${id+1}`;
+  const ph = isDefault ? fontPlaceholders[id] : 'ex : Georgia';
+  const def = isDefault ? fontStyleDefaults[id] : { style:'font-size:15px;', family:'serif', meta:'Personnalisée' };
+
+  const entry = document.createElement('div');
+  entry.className = 'font-entry';
+  entry.id = 'fontEntry'+id;
+  entry.innerHTML = `
+    <div class="font-entry-header">
+      <span class="font-role-label">${label}</span>
+      ${id >= 3 ? `<button class="btn-remove" onclick="removeFont(${id})">✕</button>` : ''}
+    </div>
+    <input type="text" id="fontName${id}" placeholder="${ph}" value="${savedName||''}" oninput="updateFontPreview(${id})" style="margin-top:0;">
+    <div class="font-block">
+      <div class="font-preview-text" id="fontPreview${id}" style="${def.style}font-family:${def.family};">Aa — ${label}</div>
+      <div class="font-meta" id="fontMeta${id}">${def.meta}</div>
+    </div>`;
+  list.appendChild(entry);
+  if (savedName) updateFontPreview(id, savedName);
+}
+
+function removeFont(id) {
+  const el = document.getElementById('fontEntry'+id);
+  if (el) { el.remove(); autoSave(); }
+}
+
+function updateFontPreview(id, forcedVal) {
+  const input = document.getElementById('fontName'+id);
+  const preview = document.getElementById('fontPreview'+id);
+  const meta = document.getElementById('fontMeta'+id);
+  if (!input || !preview) return;
+  const val = forcedVal !== undefined ? forcedVal : input.value.trim();
+  if (val) {
+    // Applique la police (polices système + Google Fonts)
+    preview.style.fontFamily = `"${val}", serif`;
+    // Met à jour le texte de l'aperçu avec le nom de la police saisie
+    preview.textContent = `Aa — ${val}`;
+    if (meta) meta.textContent = val + ' · Aperçu en direct';
+    // Tentative de chargement via Google Fonts si la police n'est pas système
+    tryLoadGoogleFont(val);
+  }
+  autoSave();
+}
+
+function tryLoadGoogleFont(fontName) {
+  // Polices système courantes — pas besoin de Google Fonts
+  const systemFonts = ['times new roman','arial','helvetica','georgia','courier new','verdana','trebuchet ms','impact','comic sans ms','palatino','garamond','bookman','tahoma','century gothic','lucida','calibri','cambria'];
+  if (systemFonts.includes(fontName.toLowerCase())) return;
+  // Vérifie si déjà chargée
+  const linkId = 'gfont-' + fontName.replace(/\s+/g,'-').toLowerCase();
+  if (document.getElementById(linkId)) return;
+  // Charge depuis Google Fonts
+  const link = document.createElement('link');
+  link.id = linkId;
+  link.rel = 'stylesheet';
+  link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(fontName)}:ital,wght@0,400;0,700;1,400&display=swap`;
+  document.head.appendChild(link);
+}
+
+// ── TAGS ──────────────────────────────────────────────
+function toggleTag(el) { el.classList.toggle('active'); autoSave(); }
+
+function addCustomTag(containerId, inputId) {
+  const input = document.getElementById(inputId);
+  const val = input.value.trim();
+  if (!val) return;
+  const container = document.getElementById(containerId);
+  const tag = document.createElement('span');
+  tag.className = 'tone-tag active custom-tag';
+  tag.textContent = val;
+  tag.title = 'Double-clic pour supprimer';
+  tag.onclick = function() { this.classList.toggle('active'); autoSave(); };
+  tag.ondblclick = function() { this.remove(); autoSave(); };
+  container.appendChild(tag);
+  input.value = '';
+  autoSave();
+}
+
+// ── PILIERS ───────────────────────────────────────────
+let pillarCount = 0;
+const defaultPiliers = ['Stratégie Instagram','Personal Branding','Création de contenu','Monétisation','Coulisses / Behind the scenes','Témoignages / Preuves sociales'];
+
+function addPillar(v1, v2) {
+  const grid = document.getElementById('pillarGrid');
+  const num = ++pillarCount;
+  const item = document.createElement('div');
+  item.className = 'pillar-item';
+  item.id = 'pillar'+num;
+  item.innerHTML = `
+    <button class="btn-remove" onclick="removePillar(${num})" title="Supprimer">✕</button>
+    <span class="pillar-num">${String(num).padStart(2,'0')}</span>
+    <input type="text" placeholder="Nom du pilier" value="${v1||''}">
+    <input type="text" placeholder="Sous-thème ou exemple" style="font-size:11px;color:#888;" value="${v2||''}">`;
+  grid.appendChild(item);
+}
+function removePillar(num) { const el=document.getElementById('pillar'+num); if(el){el.remove();autoSave();} }
+
+// ── OFFRES ────────────────────────────────────────────
+let offerCount = 0;
+function addOffer(vals) {
+  vals = vals || {};
+  const list = document.getElementById('offerList');
+  const num = ++offerCount;
+  const block = document.createElement('div');
+  block.className = 'offer-block';
+  block.id = 'offer'+num;
+  block.innerHTML = `
+    <button class="btn-remove" onclick="removeOffer(${num})" title="Supprimer">✕</button>
+    <div class="offer-num">Offre ${num}</div>
+    <label>Nom de l'offre</label>
+    <input type="text" placeholder="ex : InstaGrowth" value="${vals.name||''}">
+    <label>Type & Prix</label>
+    <input type="text" placeholder="ex : Formation vidéo · 97€" value="${vals.type||''}">
+    <label>Promesse courte</label>
+    <input type="text" placeholder="ex : Fais décoller ton Instagram en 30 jours" value="${vals.promise||''}">`;
+  list.appendChild(block);
+}
+function removeOffer(num) { const el=document.getElementById('offer'+num); if(el){el.remove();autoSave();} }
+
+// ── MOODBOARD ─────────────────────────────────────────
+function buildMoodboard() {
+  const grid = document.getElementById('moodboard');
+  for (let i=0; i<8; i++) {
+    const item = document.createElement('div');
+    item.className = 'mood-item'; item.id = 'mood'+i;
+    item.innerHTML = `<span>＋</span><p>Image</p><input type="file" accept="image/*" onchange="loadMoodImg(${i},this)">`;
+    grid.appendChild(item);
+  }
+}
+function loadMoodImg(i, input) {
+  const file = input.files[0]; if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const item = document.getElementById('mood'+i);
+    let img = item.querySelector('img');
+    if (!img) { img = document.createElement('img'); item.appendChild(img); }
+    img.src = e.target.result;
+    item.querySelector('span').style.display='none';
+    item.querySelector('p').style.display='none';
+  };
+  reader.readAsDataURL(file);
+}
+
+// ── SAVE / LOAD ───────────────────────────────────────
+function autoSave() {
+  const data = { fields:{}, activeTags:[], customTagsVoix:[], customTagsVibe:[] };
+  document.querySelectorAll('input[type="text"],textarea,select').forEach((el,i) => { data.fields['f'+i] = el.value; });
+  document.querySelectorAll('.tone-tag.active').forEach(t => data.activeTags.push(t.textContent));
+  document.querySelectorAll('#toneTags .custom-tag').forEach(t => data.customTagsVoix.push({ text:t.textContent, active:t.classList.contains('active') }));
+  document.querySelectorAll('#vibeTags .custom-tag').forEach(t => data.customTagsVibe.push({ text:t.textContent, active:t.classList.contains('active') }));
+  data.fontCount = fontCount;
+  data.pillarCount = pillarCount;
+  data.offerCount = offerCount;
+  localStorage.setItem('pb_kit_v3', JSON.stringify(data));
+  const badge = document.getElementById('saveBadge');
+  badge.style.display='block';
+  clearTimeout(window._saveTimer);
+  window._saveTimer = setTimeout(()=>badge.style.display='none', 1800);
+}
+
+function loadSaved() {
+  const raw = localStorage.getItem('pb_kit_v3');
+  if (!raw) return;
+  try {
+    const data = JSON.parse(raw);
+    (data.customTagsVoix||[]).forEach(t => { const c=document.getElementById('toneTags'); const tag=document.createElement('span'); tag.className='tone-tag custom-tag'+(t.active?' active':''); tag.textContent=t.text; tag.title='Double-clic pour supprimer'; tag.onclick=function(){this.classList.toggle('active');autoSave();}; tag.ondblclick=function(){this.remove();autoSave();}; c.appendChild(tag); });
+    (data.customTagsVibe||[]).forEach(t => { const c=document.getElementById('vibeTags'); const tag=document.createElement('span'); tag.className='tone-tag custom-tag'+(t.active?' active':''); tag.textContent=t.text; tag.title='Double-clic pour supprimer'; tag.onclick=function(){this.classList.toggle('active');autoSave();}; tag.ondblclick=function(){this.remove();autoSave();}; c.appendChild(tag); });
+    setTimeout(()=>{
+      document.querySelectorAll('input[type="text"],textarea,select').forEach((el,i)=>{ if(data.fields['f'+i]!==undefined) el.value=data.fields['f'+i]; });
+      document.querySelectorAll('.tone-tag').forEach(t=>{ if((data.activeTags||[]).includes(t.textContent)) t.classList.add('active'); });
+    },150);
+  } catch(e){}
+}
+
+function resetAll() {
+  if (confirm('Réinitialiser toutes les données ?')) { localStorage.removeItem('pb_kit_v3'); location.reload(); }
+}
+
+// ── INIT ──────────────────────────────────────────────
+buildColorRow();
+buildMoodboard();
+addFont(); addFont(); addFont(); // 3 polices par défaut
+defaultPiliers.forEach(p => addPillar(p, ''));
+addOffer(); addOffer(); // 2 offres par défaut
+loadSaved();
+document.addEventListener('input', autoSave);
+document.addEventListener('change', autoSave);
+</script>
+</body>
+</html>
